@@ -1,4 +1,6 @@
-os: linux-ppc64le
+os:
+  - linux-ppc64le
+  - linux
 language: node_js
 node_js:
   - "0.10"
@@ -8,3 +10,12 @@ node_js:
   - "6"
   - "node"
   - "iojs"
+
+matrix:
+  exclude:
+  - os: linux-ppc64le
+    node_js: "0.10"
+  - os: linux-ppc64le
+    node_js: "0.12"
+  - os: linux-ppc64le
+    node_js: "iojs"
